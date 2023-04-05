@@ -2,8 +2,9 @@
 def get_settings_dictionary():
     dict = {}
 
-    dict["default_specs_file"] = "specs.json"
-    dict["root_folder"] = "some_folder_for_experiments"
+    dict["default_specs_file"] = "specs/patchnets_generalization_train_on_airplanes.json"
+    # dict["default_specs_file"] = "specs/patchnets_main_exp.json"
+    dict["root_folder"] = "experiment"
   
     return dict
 

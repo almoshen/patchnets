@@ -258,14 +258,16 @@ if __name__ == "__main__":
 
         if not os.path.isdir(target_dir):
             os.mkdir(target_dir)
-
+        
         for instance_dir in instance_dirs:
 
             shape_dir = os.path.join(class_path, instance_dir)
-
+            
             processed_filepath = os.path.join(target_dir, instance_dir + extension)
+            # print(shape_dir)
+            
             if args.skip and os.path.isfile(processed_filepath):
-                logging.debug("skipping " + processed_filepath)
+                print("skipping " + processed_filepath)
                 continue
 
             try:

@@ -3,9 +3,9 @@
         "This experiment learns a shape representation for chairs ",
         "using data from ShapeNet version 2."
     ],
-    "DataSource": "/mnt/g/My Drive/patchnet/data/",
-    "TrainSplit": "examples/splits/sv1_generalization100_train.json",
-    "ResultsFolder": "patchnets_main_exp/",
+    "DataSource": "data/",
+    "TrainSplit": "examples/splits/sv2_planes_train.json",
+    "ResultsFolder": "patchnets_generalization_train_on_airplanes/",
     "StagedTraining": false,
     "test_time": false,
     "generate_initialization_for_object_latent": false,
@@ -161,8 +161,8 @@
         }
     ],
     "SamplesPerScene": 3072,
-    "ScenesPerBatch": 64,
-    "BatchSplit": 2,
+    "ScenesPerBatch": 24,
+    "BatchSplit": 6,
     "DataLoaderThreads": 16,
     "SnapshotFrequency": 100,
     "AdditionalSnapshots": [

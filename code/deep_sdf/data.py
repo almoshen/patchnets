@@ -18,7 +18,7 @@ def get_instance_filenames(data_source, split):
         for class_name in split[dataset]:
             for instance_name in split[dataset][class_name]:
                 instance_filename = os.path.join(
-                    dataset, class_name, instance_name + ".npz"
+                    dataset, class_name, instance_name + ".obj.npz"
                 )
                 if os.path.isfile(
                     os.path.join(data_source, ws.sdf_samples_subdir, instance_filename)
@@ -59,7 +59,7 @@ def remove_nans(tensor):
     tensor_nan = torch.isnan(tensor[:, 3])
     tensor_nan_fixed = torch.isnan(tensor).any(-1)
     if (tensor_nan != tensor_nan_fixed).any():
-        import ipdb; ipdb.set_trace()
+        tensor_nan = torch.logical_or(tensor_nan,tensor_nan_fixed)
     return tensor[~tensor_nan, :]
 
 
