@@ -209,7 +209,7 @@ if __name__ == "__main__":
         + " and placing the results in "
         + dest_dir
     )
-
+    
     if not os.path.isdir(dest_dir):
         os.makedirs(dest_dir)
 
@@ -294,7 +294,7 @@ if __name__ == "__main__":
                         normalization_param_target_dir, instance_dir + ".npz"
                     )
                     specific_args = ["-n", normalization_param_filename]
-
+                print(os.path.join(shape_dir, mesh_filename))
                 meshes_targets_and_specific_args.append(
                     (
                         os.path.join(shape_dir, mesh_filename),

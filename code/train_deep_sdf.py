@@ -772,8 +772,10 @@ def main_function(specs, settings, results_folder, code_folder, train_split_file
         logging.info(("training" if is_training else "test") + " epoch {}...".format(epoch))
 
         if is_training and not specs["test_time"]:
+            logging.info('training!!!!!!')
             decoder.train()  
         else:
+            logging.info('testing!!!!!!')
             decoder.eval()
         adjust_learning_rate(lr_schedules, optimizer, epoch)
 
@@ -1033,6 +1035,7 @@ def main_function(specs, settings, results_folder, code_folder, train_split_file
 
         seconds_elapsed = end - start
         timing_log.append(seconds_elapsed)
+        print(f'{seconds_elapsed} seconds elapsed')
 
         lr_log.append([schedule.get_learning_rate(epoch) for schedule in lr_schedules])
 
